@@ -1,0 +1,14 @@
+<!--index.wxml-->
+<view class="container">
+  <camera style="width:80vw;height:70vh">
+    <cover-view class="rectangle"></cover-view>
+    <cover-view class="tips">
+      请把证件照放入边框内
+    </cover-view>
+    <cover-image class="take" catchtap="takePhoto" src="../../images/take.png">
+    </cover-image>
+  </camera>
+
+  <canvas id="image-canvas" canvas-id="canvasId" type="2d" style="width:260px;height:150px;"></canvas>
+  <image src="{{url}}"></image>
+</view>
