@@ -54,20 +54,23 @@ Page({
         let convasX = imgInfo.width / 4;
         let convasY = imgInfo.height / 5;
         let canvasWidth = convasX * 3;
-        let canvasHeight = convasY * 3;
+        let canvasHeight = convasY * 5;
         let convasXL = convasX / 2;
         // 我这里宽度和高度都计算了设备比，其实两个值是一样的 ，计算一个就够了
         let prxHeight = info.windowHeight / imgInfo.height;//计算设备比
         let prxWidth = info.windowWidth / imgInfo.width;//计算设备比
         // ctx = wx.createCanvasContext("myCanvas", this);//自定义组件，需要加this
+        console.log('imgInfo.height ', imgInfo.height );
+        console.log('canvasHeight', canvasHeight);
         canvaCtx = wx.createCanvasContext("myCanvas");//自定义组件，需要加this
-        canvaCtx.drawImage(path,convasXL,(convasY-40),canvasWidth,canvasHeight,0,0,(parseInt(canvasWidth) * prxWidth),(parseInt(canvasHeight) * prxHeight));//绘制到canvas上的位置，canvas的宽高等
+        canvaCtx.drawImage(path,convasXL,(convasY-20),canvasWidth,canvasHeight,0,0,(parseInt(canvasWidth) * prxWidth),(parseInt(canvasHeight) * prxHeight) );//绘制到canvas上的位置，canvas的宽高等
         canvaCtx.draw(true, () => {
           wx.canvasToTempFilePath({
-            fileType: "jpg",
-            quality: 0.3,
+            fileType: "png",
+            quality: 1,
             canvasId: "myCanvas",
             success: canvasToPath => {
+              console.log('canvasToPath', canvasToPath.tempFilePath);
               this.setData({
                 isSuccess:true,
                 isBaseImg: false,

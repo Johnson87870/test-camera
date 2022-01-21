@@ -1,11 +1,11 @@
-<cover-view class="lary-top" style="height:{{info.statusBarHeight}}px;"></cover-view>
-<camera class="camera-photo" frame-size="small" device-position="{{devBack}}" flash="off" binderror="error" style="width:{{info.windowWidth}}px;height:{{info.windowHeight}}px;top:{{info.statusBarHeight}}px">
+<!-- <cover-view class="lary-top" style="height:{{info.statusBarHeight}}px;"></cover-view> -->
+<camera class="camera-photo" frame-size="small" device-position="{{devBack}}" flash="off" binderror="error" style="width:{{info.windowWidth}}px;height:{{info.windowHeight}}px;">
 	<cover-view class="page-flex" style="width:{{info.windowWidth}}px; height:{{info.windowHeight}}px;">
 		<cover-view style="height:{{info.windowHeight}}px;" class="page-mask page-mask-lr"></cover-view>
 		<cover-view class="page-content" style="height:{{info.windowHeight}}px;">
 			<cover-view class="page-mask" style="height:{{convasY-40}}px;"></cover-view>
 			<cover-view style="width:{{canvasWidth}}px; height:{{canvasHeight}}px;margin:auto"></cover-view>
-			<cover-view class="page-mask tackPhoto" style="height:{{convasY-80}}px">
+			<cover-view class="page-mask tackPhoto" style="height:{{convasY-10}}px">
                 <cover-view class="confirm-photo" bindtap="takePhoto">确定</cover-view>
                 <cover-view bindtap="cancelPhoto" class="cancel">取消</cover-view>
             </cover-view>
@@ -19,9 +19,9 @@
 </camera>
 <canvas wx:if="{{isCanvas}}" class="canvas-style" canvas-id="myCanvas" style="width:{{canvasWidth}}px; height:{{canvasHeight}}px;"></canvas>
  
-<cover-image wx:if="{{isBaseImg}}" class="base-img" mode="aspectFit" style="width:{{info.windowWidth}}px;height:{{info.windowHeight}}px;top:{{info.statusBarHeight}}px" src="{{baseImg}}"></cover-image>
-<cover-view wx:if="{{isSuccess}}" style="width:{{info.windowWidth}}px;height:{{info.windowHeight}}px;top:{{info.statusBarHeight}}px;" class="success-img">
-    <cover-image style="width:{{canvasWidth}}px; height:{{canvasHeight}}px;margin:{{convasY-80}}px auto;" src="{{srcCanvasPath}}"></cover-image>
+<cover-image wx:if="{{isBaseImg}}" class="base-img"  style="width:{{info.windowWidth}}px;height:{{info.windowHeight}}px;top:{{info.statusBarHeight}}px" src="{{baseImg}}"></cover-image>
+<cover-view wx:if="{{isSuccess}}" style="width:{{info.windowWidth}}px;height:{{info.windowHeight}}px;" class="success-img">
+    <cover-image style="width:{{canvasWidth}}px; height:{{canvasHeight}}px;margin:{{convasY-10}}px auto;" src="{{srcCanvasPath}}"></cover-image>
     <cover-view class="after-img-tips" style="color:#fff">
         <!-- 取消绘制，重新绘制 -->
         <!-- <cover-image class="back" src="../../../assets/back.png" catchtap="clearPhoto"></cover-image> -->

@@ -52,7 +52,8 @@
   transform: rotate(90deg);
 }
 .id-card-text{
-    color:#3b8bff
+    color:#3b8bff;
+    /* background-color: transparent; */
 }
 .canvas-style{
   margin: auto;
